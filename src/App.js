@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import Die from './components/die'
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,9 +12,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="main">
+          {Array(6).fill({rolled: 2}).map(({rolled})=>
+            <Die rolled={rolled} />
+          )}
+        </div>
       </div>
     );
   }
